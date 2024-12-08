@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class AccountsController {
 
+    @Autowired
     private IAccountsService iAccountsService;
 
     @Value("${build.version}")

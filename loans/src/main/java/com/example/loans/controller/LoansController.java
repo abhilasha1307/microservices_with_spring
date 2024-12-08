@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class LoansController {
 
+    @Autowired
     private ILoansService iLoansService;
 
     public LoansController(ILoansService iLoansService) {
