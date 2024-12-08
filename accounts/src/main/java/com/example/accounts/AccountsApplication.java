@@ -1,6 +1,6 @@
 package com.example.accounts;
 
-import com.example.accounts.config.AccountsContactInfo;
+import com.example.accounts.dto.AccountsContactInfoDto;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 /*@EnableJpaRepositories("com.example.accounts.repository")
 @EntityScan("com.example.accounts.model")*/
 //@ConfigurationPropertiesScan("com.example.accounts.dto.AccountsContactInfoDto")
-@EnableConfigurationProperties(AccountsContactInfo.class)
+@EnableConfigurationProperties(AccountsContactInfoDto.class)
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Accounts microservice REST API Documentation",

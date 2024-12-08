@@ -24,4 +24,11 @@ cards/mvnw
 cards/mvnw.cmd
 cards/HELP.md
 
+configserver/target/
+configserver/.idea
+configserver/.mvn
+configserver/src/main/resources
+configserver/mvnw
+configserver/mvnw.cmd
+configserver/HELP.md
 

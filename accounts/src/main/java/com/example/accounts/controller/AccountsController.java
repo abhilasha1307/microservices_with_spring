@@ -1,13 +1,11 @@
 package com.example.accounts.controller;
 
-import com.example.accounts.config.AccountsContactInfo;
 import com.example.accounts.constants.AccountsConstants;
 import com.example.accounts.dto.AccountsContactInfoDto;
 import com.example.accounts.dto.CustomerDto;
 import com.example.accounts.dto.ErrorResponseDto;
 import com.example.accounts.dto.ResponseDto;
 import com.example.accounts.service.IAccountsService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -47,7 +45,7 @@ public class AccountsController {
     private Environment environment;
 
     @Autowired
-    private AccountsContactInfo accountsContactInfo;
+    private AccountsContactInfoDto accountsContactInfoDto;
 
     ObjectMapper om = new ObjectMapper();
 
@@ -244,13 +242,6 @@ public class AccountsController {
     )
     @GetMapping("/contact-info")
     public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
-        AccountsContactInfoDto accountsContactInfoDto = new AccountsContactInfoDto();
-        accountsContactInfoDto.setBuildVersion(accountsContactInfo.getBuildVersion());
-        accountsContactInfoDto.setMessage(accountsContactInfo.getMessage());
-        accountsContactInfoDto.setContactDetailsName(accountsContactInfo.getContactDetailsName());
-        accountsContactInfoDto.setContactDetailsEmail(accountsContactInfo.getContactDetailsEmail());
-        accountsContactInfoDto.setOnCallSupport(accountsContactInfo.getOnCallSupport());
-
             return ResponseEntity.status(HttpStatus.OK).body(accountsContactInfoDto);
     }
 }
